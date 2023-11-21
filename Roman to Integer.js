@@ -38,8 +38,14 @@ var romanToInt = function(s) {
     };
     var result = 0;
     for(var i = 0; i < s.length; i++){
-        if(roman[s[i]] < roman[s[i+1]]){
+    //if the current value is less than the next value, subtract the current value from the next value
+    //if the current value is greater than or equal to the next value, add the current value to the next value
+    //Example 1: IV, I is less than V, so subtract I from result then add V to result
+    //Example 2: IX, I is less than X, so subtract I from result then add X to result
+    //Example 3: LVIII, L is greater than V, so add L to result then add V to result then add I to result then add I to result then add I to result
+    if(roman[s[i]] < roman[s[i+1]]){
             result -= roman[s[i]];
+    
         }else{
             result += roman[s[i]];
         }
