@@ -1,0 +1,13 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+        const strNum = x.toString(); // convert number to string
+        const strNumRev = strNum.split('').reverse().join(''); // reverse string
+        if (strNum === strNumRev){ // compare original and reversed string
+            return true; // return true if equal
+        } else { 
+            return false; // return false if not equal
+        }
+    };
